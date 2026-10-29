@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="Ledgera monitoring">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ececec"/>
+      <stop offset="1" stop-color="#dedede"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6f6f6"/>
+      <stop offset="1" stop-color="#f6f6f6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#232323"/>
+      <stop offset="1" stop-color="#121212"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="340" fill="url(#bg)"/>
+  <circle cx="900" cy="150" r="230" fill="url(#halo)"/>
+  <path d="M640 330 A300 300 0 0 1 760 70" fill="none" stroke="#bdbdbd" stroke-width="1"/>
+  <path d="M672 330 A270 270 0 0 1 782 96" fill="none" stroke="#cdcdcd" stroke-width="1"/>
+
+  <!-- left: title -->
+  <g font-family="'Helvetica Neue', Arial, sans-serif">
+    <text x="64" y="104" fill="#3a3a3a" font-size="15" font-weight="600" letter-spacing="7">LEDGERA</text>
+    <text x="60" y="170" fill="#111111" font-size="62" font-weight="900" letter-spacing="-1">monitoring</text>
+    <text x="64" y="208" fill="#2a2a2a" font-size="14" font-weight="500" letter-spacing="4.5">KNOW BEFORE YOUR DELEGATORS DO</text>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#1a1a1a">
+    <rect x="64" y="240" width="108" height="28" rx="14" fill="none" stroke="#1a1a1a"/>
+    <text x="80" y="259">prometheus</text>
+    <rect x="182" y="240" width="76" height="28" rx="14" fill="none" stroke="#8a8a8a"/>
+    <text x="198" y="259">grafana</text>
+    <rect x="268" y="240" width="92" height="28" rx="14" fill="none" stroke="#8a8a8a"/>
+    <text x="284" y="259">telegram</text>
+  </g>
+
+  <!-- right: alert panel as a black unit -->
+  <g transform="translate(660 52)">
+    <rect x="6" y="10" width="480" height="232" rx="14" fill="#000000" opacity="0.12"/>
+    <rect width="480" height="232" rx="14" fill="url(#box)" stroke="#000000"/>
+    <rect x="1.5" y="1.5" width="477" height="229" rx="12.5" fill="none" stroke="#3a3a3a" stroke-opacity="0.6"/>
+    <text x="24" y="34" fill="#7a7a7a" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" letter-spacing="2">BLOCKS / MIN</text>
+    <text x="456" y="34" text-anchor="end" fill="#7a7a7a" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" letter-spacing="2">VALIDATOR</text>
+    <line x1="0" y1="50" x2="480" y2="50" stroke="#2c2c2c"/>
+
+    <!-- sparkline with a stall -->
+    <polyline fill="none" stroke="#d8d8d8" stroke-width="2" stroke-linejoin="round"
+      points="24,104 54,100 84,102 114,98 144,101 174,99 204,103 234,100 264,102 294,138 324,138 354,138 384,101 414,99 456,100"/>
+    <rect x="290" y="62" width="68" height="88" fill="#ffffff" opacity="0.05"/>
+    <line x1="24" y1="150" x2="456" y2="150" stroke="#2c2c2c"/>
+
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">
+      <circle cx="30" cy="177" r="4" fill="#f0f0f0"/>
+      <text x="44" y="181" fill="#f0f0f0">BlockHeightStalled · critical</text>
+      <text x="44" y="203" fill="#a0a0a0">nibiru on val-1: no new blocks for 5+ minutes</text>
+      <circle cx="30" cy="220" r="4" fill="none" stroke="#a0a0a0"/>
+      <text x="44" y="224" fill="#a0a0a0">resolved · sent to Telegram</text>
+    </g>
+  </g>
+</svg>
